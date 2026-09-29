@@ -10,7 +10,11 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <main className="mx-auto max-w-3xl px-8 py-16">
-      <h1 className="mb-8 text-3xl font-bold">Projects</h1>
+      <Link href="/" className="text-sm text-blue-600 hover:underline">
+        ← Back to Home
+      </Link>
+
+      <h1 className="mt-4 mb-8 text-3xl font-bold">Projects</h1>
       <div className="flex flex-col gap-4">
         {projects.map((project) => (
           <Link
