@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Stat = {
   label: string;
   value: string;
@@ -16,7 +18,9 @@ export default function FeaturedProject() {
         <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-blue-600">
           Featured Project
         </p>
-        <h2 className="mb-4 text-3xl font-bold">VERISAFE</h2>
+        <Link href="/projects/verisafe" className="hover:underline">
+          <h2 className="mb-4 text-3xl font-bold">VERISAFE</h2>
+        </Link>
         <p className="mb-8 max-w-2xl text-gray-600">
           AI-assisted unit-test generation and CI/CD verification engine for
           embedded C codebases, validated on an NXP S32K144-based automotive
