@@ -30,7 +30,15 @@ const jobs: Job[] = [
 
 export default function ExperiencePage() {
   return (
-    <main className="mx-auto max-w-3xl px-8 py-16">
+    <main className="px-8 py-16"
+      style={{
+        backgroundImage: "url('/images/journey-path.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-3xl">
       <Link href="/" className="text-sm text-blue-600 hover:underline">
         ← Back to Home
       </Link>
@@ -54,6 +62,7 @@ export default function ExperiencePage() {
           </div>
         ))}
       </div>
+       </div>
     </main>
   );
 }

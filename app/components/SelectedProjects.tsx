@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type Project = {
   title: string;
@@ -40,25 +42,28 @@ export default function SelectedProjects() {
 
       <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <Link
-            key={project.title}
-            href={project.href}
-            className="flex flex-col rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md"
-          >
-            <h3 className="mb-2 font-semibold">{project.title}</h3>
-            <p className="mb-4 flex-1 text-sm text-gray-600">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          <Link key={project.title} href={project.href}>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2 }}
+              className="flex h-full flex-col rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-lg"
+            >
+              <h3 className="mb-2 font-semibold">{project.title}</h3>
+              <p className="mb-4 flex-1 text-sm text-gray-600">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </Link>
         ))}
       </div>

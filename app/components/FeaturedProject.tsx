@@ -1,14 +1,19 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import AnimatedNumber from "./AnimatedNumber";
 
 type Stat = {
   label: string;
-  value: string;
+  value: number;
+  suffix: string;
+  decimals: number;
 };
 
 const stats: Stat[] = [
-  { label: "Tests Passing", value: "40/40" },
-  { label: "Line Coverage", value: "99.0%" },
-  { label: "Branch Coverage", value: "97.4%" },
+  { label: "Tests Passing", value: 40, suffix: "/40", decimals: 0 },
+  { label: "Line Coverage", value: 99.0, suffix: "%", decimals: 1 },
+  { label: "Branch Coverage", value: 97.4, suffix: "%", decimals: 1 },
 ];
 
 export default function FeaturedProject() {
@@ -29,13 +34,17 @@ export default function FeaturedProject() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {stats.map((stat) => (
-            <div
+            <motion.div
               key={stat.label}
-              className="rounded-lg border border-gray-200 bg-white p-6 text-center"
+              whileHover={{ y: -4, scale: 1.03 }}
+              transition={{ duration: 0.2 }}
+              className="rounded-lg border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md"
             >
-              <p className="text-3xl font-bold text-blue-600">{stat.value}</p>
+              <p className="text-3xl font-bold text-blue-600">
+                <AnimatedNumber value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
+              </p>
               <p className="mt-1 text-sm text-gray-500">{stat.label}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
