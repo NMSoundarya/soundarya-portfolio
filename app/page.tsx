@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Home_Landingpage from "./components/Home_Landingpage";
 import TechMarquee from "./components/TechMarquee";
 import About from "./components/About";
 import TechnicalFocus from "./components/TechnicalFocus";
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <Hero />
+      <Home_Landingpage />
       <TechMarquee />
       <FadeIn><About /></FadeIn>
       <FadeIn><TechnicalFocus /></FadeIn>

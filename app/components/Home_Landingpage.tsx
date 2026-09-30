@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-export default function Hero() {
+import CircuitCanvas from "./CircuitCanvas";
+export default function Home_Landingpage() {
   return (
     <section className="relative flex min-h-[90vh] flex-col items-center justify-center gap-6 overflow-hidden bg-slate-950 px-8 text-center text-white">
       <motion.div
@@ -19,12 +19,12 @@ export default function Hero() {
       <div
       className="absolute inset-0 opacity-40"
       style={{
-      backgroundImage: "url('/images/circuit-bg.jpg')",
+      backgroundImage: "url('/images/hero-embedded.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center",
         }}
       />
-
+      <CircuitCanvas />
       <div className="relative z-10 flex flex-col items-center gap-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
