@@ -30,7 +30,7 @@ export default function About() {
 
         <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
           {[
-            { value: 3, suffix: "+", label: "Years Experience" },
+            { value: 4, suffix: "+", label: "Years Experience" },
             { value: 4, suffix: "", label: "Projects Shipped" },
             { value: 99, suffix: "%", label: "Peak Test Coverage" },
             { value: 3, suffix: "", label: "Companies" },
